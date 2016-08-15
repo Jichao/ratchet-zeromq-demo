@@ -1,14 +1,10 @@
-<script src="http://autobahn.s3.amazonaws.com/js/autobahn.min.js"></script>
-<script>
-    var conn = new ab.Session('ws://localhost:7070',
-        function() {
-            conn.subscribe('keke', function(topic, data) {
-                console.log('New article published to category "' + topic + '" : ' + data.title);
-            });
-        },
-        function() {
-            console.warn('WebSocket connection closed');
-        },
-        {'skipSubprotocolCheck': true}
-    );
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ratchet zeromq demo use webpack</title>
+</head>
+<body>
+  use wamp protocol
+  <script src="bundle.js"></script>
+</body>
+</html>
