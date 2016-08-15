@@ -1,6 +1,15 @@
-# ratchet-zeromq-demo
-ratchet zeromq demo
-**how to install environment on osx**
-1. xcode-select install
-2. brew install nginx
-3. 
+Ratchet zeromq demo
+-----
+####Environment####
++ `brew install zeromq`
++ `pecl install channel://pecl.php.net/zmq-1.1.3`
++ `composer update`
+
+####Run####
++ `php server.php`
++ open `index.html` in browser
++ `php index.php`
+
+####Result###
+![result](result.png)
+
