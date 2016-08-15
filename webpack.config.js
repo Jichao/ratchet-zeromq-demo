@@ -6,14 +6,8 @@ module.exports = {
   },
   module: {
     loaders: [
-      {
-        test: /\.json$/,
-        loader: 'json',
-      },
-      {
-        test: /\.md$/,
-        loader: 'markdown-loader',
-      }
+      { test: /\.json$/, loader: 'json', },
+      { test: /\.md$/, loader: "html!markdown" },
     ]
   },
   devtool: "source-map"
