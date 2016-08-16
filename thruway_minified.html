@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ratchet zeromq demo use wamp proto 2 and minified</title>
+</head>
+<body>
+  wamp proto 2 + minified autobahn(cdn or local) + thruway
+  <script src="https://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.js"></script>
+  <!-- use local min.js if your connection to cdn is slow -->
+  <!-- <script src="autobahn.min.js"></script> -->
+  <script>
+  var connection = new autobahn.Connection({
+    url: 'ws://127.0.0.1:7070/',
+    realm: 'realm1'
+  });
+
+  connection.onopen = function (session) {
+    function onevent(args) {
+      var message = 'New article published to category "' + topic + '" : ' + data.title;
+      var divNode = document.createElement("div");
+      var textNode = document.createTextNode(message);
+      divNode.appendChild(textNode);
+      document.body.appendChild(divNode);
+    }
+    session.subscribe('keke', onevent);
+  };
+  connection.open();
+  </script>
+</body>
+</html>

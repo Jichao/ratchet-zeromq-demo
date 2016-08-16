@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ratchet zeromq demo use wamp proto 1</title>
+</head>
+<body>
+  use wamp protocol v1 + rachnet
+  <script src="http://autobahn.s3.amazonaws.com/js/autobahn.min.js"></script>
+  <script>
+  var conn = new ab.Session('ws://localhost:7070',
+  function() {
+    conn.subscribe('keke', function(topic, data) {
+      var message = 'New article published to category "' + topic + '" : ' + data.title;
+      console.log(message);
+      var divNode = document.createElement("div");
+      var textNode = document.createTextNode(message);
+      divNode.appendChild(textNode);
+      document.body.appendChild(divNode);
+    });
+  },
+  function() {
+    console.warn('WebSocket connection closed');
+  },
+  {'skipSubprotocolCheck': true}
+);
+</script>
+</body>
+</html>
