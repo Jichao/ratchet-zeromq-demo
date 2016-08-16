@@ -15,8 +15,8 @@
   });
 
   connection.onopen = function (session) {
-    function onevent(args) {
-      var message = 'New article published to category "' + topic + '" : ' + data.title;
+    function onevent(data) {
+      var message = 'New article published to category "' + data[0].category + '" : ' + data[0].title;
       var divNode = document.createElement("div");
       var textNode = document.createTextNode(message);
       divNode.appendChild(textNode);

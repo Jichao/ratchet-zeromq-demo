@@ -1,1 +1,5 @@
 /vendor/
+/bundle.js
+/bundle.js.map
+/composer.lock
+/node_modules/
