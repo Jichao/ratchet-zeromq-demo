@@ -23,5 +23,10 @@ for wamp2 + thruway
 ####Wamp version####
 ratchet does not support wamp proto v2, the npm package of autobahn use wamp proto v2. So webpack version for ratchet would not work, you'd need to use thruway.
 
-####Result###
+####Result####
 ![result](result.png)
+
+####References####
++ [convert from ratchnet to thruway](https://github.com/voryx/Thruway/issues/96)
++ [ratchnet push example](http://socketo.me/docs/push)
+
